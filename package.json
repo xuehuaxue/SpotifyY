@@ -1,0 +1,25 @@
+{
+  "name": "spotifyy",
+  "version": "1.0.0",
+  "description": "Convert user's spotify playlist into a Youtube playlist. This app saves time for user who wants to watch music videos for songs under its Spotify playlist. Just in one click, the app will handle the conversion and save the result as a playlist to user's Youtube account.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xu chen",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "xuehuaxue"
+  },
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "opn": "^5.1.0",
+    "passport": "^0.4.0",
+    "passport-spotify": "^0.3.1",
+    "request": "^2.83.0",
+    "youtube-api": "^2.0.9"
+  }
+}

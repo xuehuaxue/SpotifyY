@@ -1,0 +1,65 @@
+<!-- views/welcome.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Welcome</title>
+
+</head>
+<body>
+
+<main>
+
+
+    <div style="padding-left: 30px; padding-top: 7%">
+        <h1>Welcome to Spotify - Youtube Conversion</h1>
+        <p>lets convert your spotify playlist into youtube playlist</p>
+
+        <input type="button" onclick="location.href='http://localhost:8080/auth/spotify';" value="Lets Begin" />
+    </div>
+</main>
+
+<footer>
+
+</footer>
+
+<style>
+    body{
+        background: linear-gradient(-90deg, powderblue, lightyellow);
+    }
+
+    h1{
+        margin-top: 30px;
+        margin-bottom: 25px;
+        font-weight: 400;
+        font-size: 300%;
+        color: darkolivegreen;
+    }
+    p{
+        font-size: 130%;
+        letter-spacing: 1px;
+        color: darkolivegreen;
+    }
+
+    input[type=button] {
+        margin: 25px 0;
+        padding:15px 36px;
+        color:cadetblue;
+        background:transparent;
+        border: 2px solid darkseagreen;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+    input[type=button]:hover {
+        transform: scale(1.2);
+        color: olive;
+        font-size: 100%;
+    }
+
+</style>
+
+</body>
+</html>
