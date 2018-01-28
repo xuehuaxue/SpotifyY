@@ -10,6 +10,8 @@ var SpotifyStrategy = require('passport-spotify').Strategy
 
 var app = express()
 
+app.use( express.static( "public" ) )
+
 app.use(bodyParser())
 app.use(session({
     resave: true,
