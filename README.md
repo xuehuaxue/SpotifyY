@@ -1,6 +1,8 @@
 # SpotifyY
 Convert user's spotify playlist into a Youtube playlist. This app saves time for user who wants to watch music videos for songs under its Spotify playlist. Just in one click, the app will handle the conversion and save the result as a playlist to user's Youtube account.
 
+### The app is currently deployed with [heroku](https://spotifyy.herokuapp.com/), lets try it
+
 ## Getting Started
 To use this app, you will need to have a Spotify account and a Google account. If you have them already, you have to create an application in your [Google Console](https://console.developers.google.com/) and an application in your [Spotify Developer Dashboard](https://beta.developer.spotify.com/). When creating both apps, don't forget to select **Web app** option. You also have to enable **YouTube Data API v3** for your google app.
 
