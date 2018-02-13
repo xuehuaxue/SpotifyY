@@ -12,11 +12,12 @@
 
 
     <div class='playlist' style="padding-left: 30px;">
-        <h1>Hi <%= username%>, select one of your favorite playlist!</h1>
+        <h1><span style="color:#fefefe">Hi <%= username %>,</span> select one of your favorite playlist!</h1>
 
         <form action="/get_tracks" method="POST">
             <% playlist.forEach(function(list) { %>
-            <input type="radio" checked="checked" value=<%= list.name %> name="list"> <label><%= list.name %></label> <br><br>
+            <input type="radio" checked="checked" value=<%= list.name %> name="list"> <label><%= list.name %></label>
+            <br><br>
             <% }); %>
 
             <input type="text" placeholder="New name for playlist(optional)" name="title"/><br>
@@ -30,50 +31,44 @@
 </main>
 
 <style>
-    body{
-        background: rgba(229, 165, 173, 0.28);
+    body {
+        background: #282828; /* match border color */
+        font-size: 20px;
     }
 
-    h1{
+    h1 {
         margin-top: 30px;
         margin-bottom: 25px;
-        font-size: 250%;
-        letter-spacing: 0;
-        color: #000000;
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
+        font: 44px 'Arial Narrow', sans-serif;
+        color: #dc006c;
     }
+
     input[type=submit] {
         display: block;
-        margin: 15px 0;
-        padding:15px 36px;
-        color:rgba(50, 50, 50, 0.85);
-        background:transparent;
-        border: 2px solid #e70028;;
+        margin: 25px 0;
+        padding: 15px 36px;
+        background: transparent;
         cursor: pointer;
-        -webkit-border-radius: 5px;
+        border: 2px solid #dc006c;
         border-radius: 5px;
+        color: #fefefe;
+
     }
 
     input[type=submit]:hover {
-        transform: scale(1.2);
-        color: rgba(50, 50, 50, 0.85);
-        font-size: 100%;
+        border: 2px solid #dc006c;
+        border-radius: 5px;
+        color: #dc006c;
     }
-
 
     label {
-        color: black;
-    }
-
-    label:hover {
-        font-size: 120%;
-        color:#e70028;
+        color: #fefefe;
     }
 
     input[type=text], select {
         height: 30px;
         width: 300px;
-        border: 1px solid rgba(50, 50, 50, 0.85);
+        border: 1px solid #dc006c;
         margin-top: 5px;
         display: inline-block;
     }

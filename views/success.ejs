@@ -12,7 +12,10 @@
 
 
     <div class='playlist' style="margin-left: 30px">
-        <h1>Lets rock</h1>
+        <h1 class="logo">
+            <span class="word1">Lets</span>
+            <span class="word2">rock</span>
+        </h1>
         <%if (link != '') { %>
         <iframe width="720" height="405" src=<%=link%> allowfullscreen></iframe>
         <% } %>
@@ -24,34 +27,91 @@
 
 <style>
     body{
-        background: rgba(229, 165, 173, 0.28);
+        background: #282828;
     }
 
-    h1{
-        margin-top: 30px;
-        margin-bottom:5px;
-        font-size: 300%;
-        letter-spacing: 0;
-        color: #000000;
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
+    .logo {
+        font: 54px 'Arial Narrow', sans-serif;
+        color: #fefefe;
+        text-transform: uppercase;
+        letter-spacing: -4px;
     }
+
+    /* stuff for both words */
+    .logo span {
+        position: relative;
+    }
+
+    .logo span:before,
+    .logo span:after {
+        content: '';
+        position: absolute;
+        border-width: 22px; /* makes a nice, big 64px square */
+        border-style: solid;
+        border-color: transparent;
+        height: 0;
+        z-index: 10;
+    }
+
+    /* stuff for 1st word */
+    .logo .word1 {
+        color: #dc006c;
+        margin-right: -12px;
+        display: inline-block; /* required for transform */
+        z-index: 10; /* stack 1st word on top */
+    }
+
+    .logo .word1:before {
+        left: -4px;
+        top: -10px;
+        border-top-color: #282828; /* match background color */
+        border-left-color: #282828;
+    }
+
+    .logo .word1:after {
+        right: 17px;
+        bottom: -15px;
+        border-bottom-color: #282828;
+        border-right-color: #282828; /* would be right, but we flipped the word */
+    }
+
+    /* stuff for 2nd word */
+    .logo .word2 {
+        z-index: 0; /* stack 2nd word below */
+    }
+
+    .logo .word2:before {
+        left: -4px;
+        top: -6px;
+        border-top-color: #282828;
+        border-left-color: #282828;
+    }
+
+    .logo .word2:after {
+        right: -15px;
+        bottom: 2px;
+        border-bottom-color: #282828;
+        border-right-color: #282828;
+    }
+
 
     input[type=button] {
         display: block;
-        margin: 15px 0;
-        padding:15px 36px;
-        color:rgba(50, 50, 50, 0.85);
-        background:transparent;
-        border: 2px solid #e70028;
+        margin: 25px 0;
+        padding: 15px 36px;
+        font-size: 15px;
+        background: transparent;
         cursor: pointer;
-        -webkit-border-radius: 5px;
+        border: 2px solid #dc006c;
         border-radius: 5px;
+        color: #fefefe;
+
     }
 
     input[type=button]:hover {
-        transform: scale(1.2);
-        color: #e70028;
-        font-size: 100%;
+        border: 2px solid #dc006c;
+        border-radius: 5px;
+        color: #dc006c;
     }
 
 </style>
