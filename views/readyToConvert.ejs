@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>sign in success</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- this page is based on tutorial https://www.w3schools.com/howto/howto_js_progressbar.asp -->
+<div class="main">
+    <h1>Login successfully! Click the button to start convert!</h1>
+
+    <div id="myProgress">
+        <div id="myBar"></div>
+    </div>
+
+    <br>
+    <form action="/create_playlist" method="POST">
+        <input type="submit" onclick="move()" value="ready to convert">
+    </form>
+
+</div>
+<script>
+    function move() {
+        var elem = document.getElementById("myBar");
+        var width = 0;
+        var id = setInterval(frame, 50);
+
+        function frame() {
+            if (width >= 99) {
+                clearInterval(id);
+            } else {
+                width++;
+                elem.style.width = width + '%';
+                elem.innerHTML = width * 1 + '%';
+            }
+        }
+    }
+</script>
+
+</body>
+<style>
+    #myProgress {
+        width: 80%;
+        background-color: #ddd;
+    }
+
+    #myBar {
+        width: 0;
+        height: 30px;
+        background-color: #dc006c;
+        text-align: center;
+        line-height: 30px;
+        color: white;
+    }
+
+    body {
+        background: #282828; /* match border color */
+        font-size: 20px;
+        padding-left: 30px;
+    }
+
+    h1 {
+        margin-top: 30px;
+        margin-bottom: 25px;
+        font: 44px 'Arial Narrow', sans-serif;
+        color: #dc006c;
+    }
+
+    input[type=submit] {
+        display: block;
+        margin: 25px 0;
+        padding: 15px 36px;
+        background: transparent;
+        cursor: pointer;
+        border: 2px solid #dc006c;
+        border-radius: 5px;
+        color: #fefefe;
+
+    }
+
+    input[type=submit]:hover {
+        border: 2px solid #dc006c;
+        border-radius: 5px;
+        color: #dc006c;
+    }
+
+    @media only screen and (max-width: 767px) {  /* this part is for mobile responsive element*/
+        body {
+            margin-top: 0;
+            padding-left: 2%;
+        }
+
+        h1 {
+            padding-top: 0;
+        }
+
+        input[type=submit] {
+            width: 90%;
+            font-size: 20px;
+        }
+
+        #myProgress {
+            width: 90%;
+        }
+
+        h1{
+            font-size: 35px;
+        }
+
+        .main{
+            padding-left: 2%;
+        }
+    }
+
+</style>
+</html>

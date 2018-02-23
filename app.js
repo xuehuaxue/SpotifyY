@@ -266,13 +266,13 @@ app.get('/auth/youtube/callback', function (req, res) {
         console.log(tokens)
         oauth.setCredentials(tokens)
         console.log("Got the tokens.")
-        res.redirect("/create_playlist")  //after got the token, redirect to next step
+        res.render('readyToConvert') //after got the token, redirect to next step
     })
 })
 
 // now we got all necessary info, lets create the playlist!
 
-app.get('/create_playlist', function (req, res) {
+app.post('/create_playlist', function (req, res) {
     // a request to create playlist with the name of selected spotify playlist
     // as well as auth we just acquired in the above step
     let reqe = Youtube.playlists.insert({

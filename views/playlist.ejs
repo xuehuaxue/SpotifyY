@@ -5,13 +5,14 @@
 
 <head>
     <title>view playlist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
 <main>
 
 
-    <div class='playlist' style="padding-left: 30px;">
+    <div class='playlist'>
         <h1><span style="color:#fefefe">Hi <%= username %>,</span> select one of your favorite playlist!</h1>
 
         <form action="/get_tracks" method="POST">
@@ -34,6 +35,10 @@
     body {
         background: #282828; /* match border color */
         font-size: 20px;
+    }
+
+    .playlist {
+        padding-left: 30px;
     }
 
     h1 {
@@ -71,6 +76,33 @@
         border: 1px solid #dc006c;
         margin-top: 5px;
         display: inline-block;
+    }
+
+    @media only screen and (max-width: 767px) {  /* this part is for mobile responsive element*/
+        body {
+            margin-top: 0;
+            margin-left: 0;
+            font-size: 80%;
+        }
+
+        h1 {
+            padding-top: 0;
+            font-size: 30px;
+        }
+
+        .playlist {
+            padding-top: 0;
+            margin-top: 0;
+            padding-left: 10%;
+        }
+
+        input[type=submit] {
+            width: 90%;
+        }
+
+        input[type=text] {
+            width: 90%;
+        }
     }
 
 
